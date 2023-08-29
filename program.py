@@ -1,29 +1,34 @@
 from random import randrange
 
 class MathOperation:
-     def __init__(self, a, b):
-        self.a = randrange(a, b)
-        self.b = randrange(a, b)
-
-     def checkInput(self):
+    def __init__(self, start, end):
+        self.a = randrange(start, end)
+        self.b = randrange(start, end)
+        
+    def start(self):
+        return self.checkInput()   
+     
+    def checkInput(self):
         txt = input(f"{self.a} * {self.b} = ")
         if txt.isdigit():
             return self.multiplicationNumber(txt)
         else:
             return print('Вы ввели не число')
         
-     def multiplicationNumber(self, txt): 
+    def multiplicationNumber(self, txt): 
         result = self.a * self.b
         if int(txt) == result:
             print(f"+++++++++++++ :-) {self.a} * {self.b} = {result}")
-            self.a = randrange(1, 10)
-            self.b = randrange(1, 10)
+            self.updateInit()
             return self.checkInput()
         else:
             return print(f"------------- :-( {self.a} * {self.b} = {result}")
         
+    def updateInit(self): 
+        self.__init__( 1, 10)
+        
 intervalNumber = MathOperation(1, 10)
-intervalNumber.checkInput()
+intervalNumber.start()
 
 
 
