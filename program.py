@@ -19,13 +19,3 @@ def genericRandomNum(start, end):
     return inputDataNumber(randrange(start, end), randrange(start, end))
 
 genericRandomNum(1, 10)
-
-
-class Person:
- 
-    def __init__(self, name):
-        self.name = name  
-        self.age = 1  
- 
- 
-tom = Person("Tom")
