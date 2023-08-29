@@ -10,7 +10,7 @@ def multiplicationNumber(a, b):
         else:
             return print(f":-( {a} * {b} = {result}")
     else:
-        print('Вы ввели не число')
+        return print('Вы ввели не число')
 
 
         
