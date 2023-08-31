@@ -1,9 +1,11 @@
 from random import randrange
 
+intervalNumber = [1,10]
+
 class MathOperation:
-    def __init__(self, start, end):
-        self.a = randrange(start, end)
-        self.b = randrange(start, end)
+    def __init__(self, intervalNumber):
+        self.a = randrange(intervalNumber[0], intervalNumber[1])
+        self.b = randrange(intervalNumber[0], intervalNumber[1])
         
     def start(self):
         return self.checkInput()   
@@ -25,9 +27,9 @@ class MathOperation:
             return print(f"------------- :-( {self.a} * {self.b} = {result}")
         
     def updateInit(self): 
-        self.__init__( 1, 10)
+        self.__init__([1, 10])
         
-intervalNumber = MathOperation(1, 10)
+intervalNumber = MathOperation(intervalNumber)
 intervalNumber.start()
 
 
